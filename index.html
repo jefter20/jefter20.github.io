@@ -122,6 +122,7 @@
             gap: 30px;
         }
 
+        /* Adicione estas propriedades para que o link não fique azul e sublinhado */
         .project-card {
             background-color: var(--card-bg);
             border-radius: 8px;
@@ -129,6 +130,11 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             border-top: 4px solid var(--secondary-color);
             transition: transform 0.3s, box-shadow 0.3s;
+            
+            /* NOVAS PROPRIEDADES */
+            display: block; 
+            text-decoration: none; 
+            color: inherit;
         }
 
         .project-card:hover {
@@ -209,7 +215,7 @@
         
         <div class="projects-grid">
             <!-- Cartão 1 -->
-            <div class="project-card">
+            <a href="automacao-esgoto.html" class="project-card">
                 <h3 class="project-title">Automação de Cotas para Redes de Esgoto</h3>
                 <p>Script desenvolvido para automatizar cálculos geométricos, fatores de escala e inserção de cotas precisas em projetos de redes coletoras de esgoto, garantindo precisão técnica e padronização.</p>
                 <div class="project-tags">
@@ -217,29 +223,29 @@
                     <span>AutoCAD</span>
                     <span>Saneamento</span>
                 </div>
-            </div>
+            </a>
 
             <!-- Cartão 2 -->
-            <div class="project-card">
-                <h3 class="project-title">Projeto Integra Tietê</h3>
-                <p>Atuação no suporte técnico e desenvolvimento de projetos relacionados à infraestrutura, regularização urbana e saneamento para a depoluição de bacias hidrográficas em São Paulo.</p>
+            <a href="drenagem.html" class="project-card">
+                <h3 class="project-title">Automação de Cotas para Redes de Esgoto</h3>
+                <p>Script desenvolvido para automatizar cálculos geométricos, fatores de escala e inserção de cotas precisas em projetos de redes coletoras de esgoto, garantindo precisão técnica e padronização.</p>
                 <div class="project-tags">
-                    <span>Engenharia Civil</span>
-                    <span>Drenagem</span>
-                    <span>Infraestrutura</span>
+                    <span>AutoLISP</span>
+                    <span>AutoCAD</span>
+                    <span>Saneamento</span>
                 </div>
-            </div>
+            </a>
 
             <!-- Cartão 3 -->
-            <div class="project-card">
-                <h3 class="project-title">Scripts de Otimização Topográfica</h3>
-                <p>Rotinas criadas para automatizar o processamento de coordenadas, off-sets de drenagem e leitura de dados brutos de campo direto para o ambiente CAD, acelerando a entrega de plantas.</p>
+            <a href="automacao-topografia.html" class="project-card">
+                <h3 class="project-title">Automação de Cotas para Redes de Esgoto</h3>
+                <p>Script desenvolvido para automatizar cálculos geométricos, fatores de escala e inserção de cotas precisas em projetos de redes coletoras de esgoto, garantindo precisão técnica e padronização.</p>
                 <div class="project-tags">
-                    <span>Python</span>
-                    <span>ZWCAD</span>
-                    <span>Topografia</span>
+                    <span>AutoLISP</span>
+                    <span>AutoCAD</span>
+                    <span>Saneamento</span>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
 

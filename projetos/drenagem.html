@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automação de Cotas | Jefter Alves</title>
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --secondary-color: #3b82f6;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 20px;
+            text-align: left;
+        }
+
+        .back-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .back-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .project-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .project-meta {
+            background-color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .project-content h2 {
+            color: var(--primary-color);
+            margin: 30px 0 15px 0;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
+        }
+
+        .project-content p {
+            margin-bottom: 15px;
+        }
+
+        /* Estilo para os blocos de código */
+        pre {
+            background-color: #1e293b;
+            color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="max-width: 900px; margin: 0 auto;">
+            <a href="index.html" class="back-link">← Voltar para o Portfólio</a>
+        </div>
+    </header>
+
+    <main class="project-container">
+        <h1>Automação de Cotas para Redes de Esgoto</h1>
+        
+        <div class="project-meta">
+            <strong>Linguagem:</strong> AutoLISP <br>
+            <strong>Software:</strong> AutoCAD / ZWCAD <br>
+            <strong>Área:</strong> Projetos de Saneamento
+        </div>
+
+        <div class="project-content">
+            <h2>O Problema</h2>
+            <p>A inserção manual de cotas em perfis longitudinais de redes coletoras de esgoto consome muito tempo e está sujeita a pequenos erros de digitação e imprecisões geométricas, afetando a qualidade final da planta topográfica e atrasando a entrega do projeto.</p>
+
+            <h2>A Solução</h2>
+            <p>Desenvolvi uma rotina em AutoLISP que lê as coordenadas de pontos específicos, calcula os fatores de escala e os offsets de drenagem necessários, e plota as cotas automaticamente nos locais corretos, seguindo o padrão de apresentação exigido.</p>
+
+            <h2>Trecho do Código</h2>
+            <p>Abaixo está um trecho demonstrativo da lógica matemática utilizada na rotina:</p>
+
+            <pre><code>(defun c:InsereCotaEsgoto ()
+  (setq ptBase (getpoint "\nSelecione o ponto base do poço de visita: "))
+  (setq cotaTerreno (getreal "\nDigite a cota do terreno: "))
+  
+  ;; Cálculo do rebaixamento (exemplo genérico)
+  (setq offsetDrenagem 1.50)
+  (setq cotaFundo (- cotaTerreno offsetDrenagem))
+  
+  ;; Insere o texto da cota no CAD
+  (command "_.text" ptBase "0.2" "0" (rtos cotaFundo 2 2))
+  (princ "\nCota inserida com sucesso!")
+  (princ)
+)</code></pre>
+
+            <h2>Resultados e Impacto</h2>
+            <p>A aplicação desse script reduziu o tempo de detalhamento do projeto em aproximadamente 40%, permitindo maior foco na análise técnica da rede de saneamento em vez do trabalho braçal de inserção de textos.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Jefter Alves.</p>
+    </footer>
+
+</body>
+</html>
