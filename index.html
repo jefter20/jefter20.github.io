@@ -3,255 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jefter Alves | Portfólio</title>
+    <title>Jefter Alves | Engenharia & Automação</title>
+    
+    <!-- Fontes Modernas do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
-        /* Variáveis de Cores e Estilos Básicos */
+        /* Variáveis do Tema Dark/Neon */
         :root {
-            --primary-color: #0f172a; /* Azul escuro (tema de engenharia/tecnologia) */
-            --secondary-color: #3b82f6; /* Azul claro (destaques e links) */
-            --bg-color: #f8fafc;
-            --text-color: #334155;
-            --card-bg: #ffffff;
+            --bg-dark: #0a0f18;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --accent-glow: #00f6ff; /* Ciano estilo CAD/Neon */
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 246, 255, 0.05), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(0, 102, 255, 0.05), transparent 25%);
+            background-attachment: fixed;
         }
 
-        /* Cabeçalho / Hero Section */
+        /* Hero Section - Apresentação */
         header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 80px 20px;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-
-        header h2 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: #cbd5e1;
-            margin-bottom: 20px;
-        }
-
-        .contact-links a {
-            display: inline-block;
-            margin: 0 10px;
-            padding: 10px 20px;
-            background-color: var(--secondary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .contact-links a:hover {
-            background-color: #2563eb;
-        }
-
-        /* Seções Principais */
-        section {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: var(--primary-color);
+            padding: 20px;
             position: relative;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #ffffff, var(--accent-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* Sobre Mim */
-        .about-text {
-            font-size: 1.1rem;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 40px;
+            font-weight: 300;
         }
 
-        /* Habilidades */
-        .skills-container {
+        .hero-subtitle span {
+            font-family: 'Fira Code', monospace;
+            color: var(--accent-glow);
+            font-size: 1rem;
+        }
+
+        /* Botões Modernos */
+        .btn-group {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 20px;
         }
 
-        .skill-tag {
-            background-color: #e2e8f0;
-            color: var(--primary-color);
-            padding: 8px 16px;
-            border-radius: 20px;
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: rgba(0, 246, 255, 0.1);
+            color: var(--accent-glow);
+            border: 1px solid rgba(0, 246, 255, 0.3);
+            box-shadow: 0 0 15px rgba(0, 246, 255, 0.1);
+        }
+
+        .btn-primary:hover {
+            background: rgba(0, 246, 255, 0.2);
+            box-shadow: 0 0 25px rgba(0, 246, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-muted);
+            transform: translateY(-2px);
+        }
+
+        /* Seções */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-header {
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-header::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border-color), transparent);
         }
 
         /* Grid de Projetos */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
-        /* Adicione estas propriedades para que o link não fique azul e sublinhado */
+        /* Cartões de Projeto - Estilo Glassmorphism */
         .project-card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--secondary-color);
-            transition: transform 0.3s, box-shadow 0.3s;
-            
-            /* NOVAS PROPRIEDADES */
-            display: block; 
-            text-decoration: none; 
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            text-decoration: none;
             color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efeito de brilho no hover do cartão */
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            border-color: rgba(0, 246, 255, 0.2);
+            box-shadow: 0 10px 30px -10px rgba(0, 246, 255, 0.15);
+        }
+
+        .project-card:hover::before {
+            transform: translateX(100%);
         }
 
         .project-title {
-            font-size: 1.3rem;
-            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 600;
             margin-bottom: 15px;
+            color: #ffffff;
         }
 
-        .project-tags {
-            margin-top: 15px;
-            font-size: 0.85rem;
-            color: #64748b;
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            flex-grow: 1;
         }
 
-        .project-tags span {
-            display: inline-block;
-            border: 1px solid #cbd5e1;
-            padding: 3px 8px;
+        /* Tags de Habilidades/Linguagens */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .tech-tag {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+            padding: 5px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
             border-radius: 4px;
-            margin-right: 5px;
-            margin-bottom: 5px;
+            color: var(--accent-glow);
         }
 
         /* Rodapé */
         footer {
-            background-color: var(--primary-color);
-            color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
             font-size: 0.9rem;
+            margin-top: 50px;
         }
 
-        /* Responsividade */
+        /* Responsivo */
         @media (max-width: 768px) {
-            header h1 { font-size: 2.2rem; }
-            .contact-links a { margin-bottom: 10px; display: block; }
+            .hero-title { font-size: 2.5rem; }
+            .btn-group { flex-direction: column; width: 100%; max-width: 300px; }
+            .btn { text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Cabeçalho -->
+    <!-- Apresentação Principal -->
     <header>
-        <h1>Jefter Alves</h1>
-        <h2>Projetista de Infraestrutura | Estudante de Agrimensura | Entusiasta em Automações CAD</h2>
-        <div class="contact-links">
-            <a href="https://github.com/jefter20" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/jefteralves" target="_blank">LinkedIn</a>
-            <a href="mailto:jefteralves57@gmail.com">Contato</a>
+        <h1 class="hero-title">Jefter Alves</h1>
+        <p class="hero-subtitle">
+            Otimizando a engenharia civil através da tecnologia. <br>
+            <span>Topografia | Projetos de Saneamento | Automações CAD</span>
+        </p>
+        <div class="btn-group">
+            <a href="#projetos" class="btn btn-primary">Ver Soluções</a>
+            <a href="https://linkedin.com/in/SEU-LINKEDIN" target="_blank" class="btn btn-secondary">LinkedIn</a>
+            <a href="https://github.com/SEU-GITHUB" target="_blank" class="btn btn-secondary">GitHub</a>
         </div>
     </header>
 
-    <!-- Sobre Mim -->
-    <section id="sobre">
-        <h2 class="section-title">Sobre o Profissional</h2>
-        <p class="about-text">
-            Sou projetista de infraestrutura urbana, com foco em drenagem e forte atuação no desenvolvimento de soluções para infraestrutura. Tenho experiência prática em grandes iniciativas de despoluição e saneamento, auxiliando na gestão de projetos de redes de esgoto. Além da atuação em campo e escritório, otimizo processos complexos de projeto através da criação de scripts personalizados, reduzindo horas de trabalho manual.
-        </p>
-        
-        <div class="skills-container">
-            <span class="skill-tag">AutoLISP</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">AutoCAD / ZWCAD</span>
-            <span class="skill-tag">Topografia</span>
-            <span class="skill-tag">Saneamento e Drenagem</span>
-        </div>
-    </section>
-
-    <!-- Projetos & Automações -->
+    <!-- Sessão de Projetos e Scripts -->
     <section id="projetos">
-        <h2 class="section-title">Projetos e Automações</h2>
+        <h2 class="section-header">Ferramentas & Projetos</h2>
         
         <div class="projects-grid">
+            
             <!-- Cartão 1 -->
             <a href="projetos/automacao-esgoto.html" class="project-card">
-                <h3 class="project-title">Automação de Cotas para Redes de Esgoto</h3>
-                <p>Script desenvolvido para automatizar cálculos geométricos, fatores de escala e inserção de cotas precisas em projetos de redes coletoras de esgoto, garantindo precisão técnica e padronização.</p>
-                <div class="project-tags">
-                    <span>AutoLISP</span>
-                    <span>AutoCAD</span>
-                    <span>Saneamento</span>
+                <h3 class="project-title">Automação de Cotas: Esgoto</h3>
+                <p class="project-desc">Algoritmo para cálculo geométrico e inserção automática de cotas e rebaixamentos em perfis longitudinais, eliminando trabalhos manuais e erros de precisão na planta.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">AutoLISP</span>
+                    <span class="tech-tag">AutoCAD / ZWCAD</span>
                 </div>
             </a>
 
             <!-- Cartão 2 -->
-            <a href="projetos/drenagem.html" class="project-card">
-                <h3 class="project-title">Automação de Cotas para Redes de Esgoto</h3>
-                <p>Script desenvolvido para automatizar cálculos geométricos, fatores de escala e inserção de cotas precisas em projetos de redes coletoras de esgoto, garantindo precisão técnica e padronização.</p>
-                <div class="project-tags">
-                    <span>AutoLISP</span>
-                    <span>AutoCAD</span>
-                    <span>Saneamento</span>
+            <a href="projetos/automacao-topografia.html" class="project-card">
+                <h3 class="project-title">Processamento Topográfico</h3>
+                <p class="project-desc">Scripts desenvolvidos para leitura, conversão e lançamento em lote de dados brutos de campo diretamente para o ambiente vetorial de projeto.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Dados Topográficos</span>
                 </div>
             </a>
 
             <!-- Cartão 3 -->
-            <a href="projetos/automacao-topografia.html" class="project-card">
-                <h3 class="project-title">Automação de Cotas para Redes de Esgoto</h3>
-                <p>Script desenvolvido para automatizar cálculos geométricos, fatores de escala e inserção de cotas precisas em projetos de redes coletoras de esgoto, garantindo precisão técnica e padronização.</p>
-                <div class="project-tags">
-                    <span>AutoLISP</span>
-                    <span>AutoCAD</span>
-                    <span>Saneamento</span>
+            <a href="projetos/drenagem.html" class="project-card">
+                <h3 class="project-title">Projetos: Integra Tietê</h3>
+                <p class="project-desc">Atuação técnica no desenho, modelagem e suporte a projetos de microdrenagem e expansão da rede de esgotos na regularização urbana de bacias hidrográficas.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Engenharia</span>
+                    <span class="tech-tag">Saneamento</span>
                 </div>
             </a>
+
         </div>
     </section>
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2026 Jefter Alves. Desenvolvido para exibição de portfólio.</p>
+        <p>&copy; 2026 Jefter Alves. Construído com código estruturado.</p>
     </footer>
 
 </body>
