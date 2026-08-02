@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jefter Alves | Portfólio</title>
+    <style>
+        /* Variáveis de Cores e Estilos Básicos */
+        :root {
+            --primary-color: #0f172a; /* Azul escuro (tema de engenharia/tecnologia) */
+            --secondary-color: #3b82f6; /* Azul claro (destaques e links) */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho / Hero Section */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        header h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .contact-links a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .contact-links a:hover {
+            background-color: #2563eb;
+        }
+
+        /* Seções Principais */
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Sobre Mim */
+        .about-text {
+            font-size: 1.1rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Habilidades */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background-color: #e2e8f0;
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Grid de Projetos */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--secondary-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .project-tags {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .project-tags span {
+            display: inline-block;
+            border: 1px solid #cbd5e1;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .contact-links a { margin-bottom: 10px; display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Jefter Alves</h1>
+        <h2>Projetista de Infraestrutura | Estudante de Agrimensura | Entusiasta em Automações CAD</h2>
+        <div class="contact-links">
+            <a href="https://github.com/jefter20" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/jefteralves" target="_blank">LinkedIn</a>
+            <a href="mailto:jefteralves57@gmail.com">Contato</a>
+        </div>
+    </header>
+
+    <!-- Sobre Mim -->
+    <section id="sobre">
+        <h2 class="section-title">Sobre o Profissional</h2>
+        <p class="about-text">
+            Sou projetista de infraestrutura urbana, com foco em drenagem e forte atuação no desenvolvimento de soluções para infraestrutura. Tenho experiência prática em grandes iniciativas de despoluição e saneamento, auxiliando na gestão de projetos de redes de esgoto. Além da atuação em campo e escritório, otimizo processos complexos de projeto através da criação de scripts personalizados, reduzindo horas de trabalho manual.
+        </p>
+        
+        <div class="skills-container">
+            <span class="skill-tag">AutoLISP</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">AutoCAD / ZWCAD</span>
+            <span class="skill-tag">Topografia</span>
+            <span class="skill-tag">Saneamento e Drenagem</span>
+        </div>
+    </section>
+
+    <!-- Projetos & Automações -->
+    <section id="projetos">
+        <h2 class="section-title">Projetos e Automações</h2>
+        
+        <div class="projects-grid">
+            <!-- Cartão 1 -->
+            <div class="project-card">
+                <h3 class="project-title">Automação de Cotas para Redes de Esgoto</h3>
+                <p>Script desenvolvido para automatizar cálculos geométricos, fatores de escala e inserção de cotas precisas em projetos de redes coletoras de esgoto, garantindo precisão técnica e padronização.</p>
+                <div class="project-tags">
+                    <span>AutoLISP</span>
+                    <span>AutoCAD</span>
+                    <span>Saneamento</span>
+                </div>
+            </div>
+
+            <!-- Cartão 2 -->
+            <div class="project-card">
+                <h3 class="project-title">Projeto Integra Tietê</h3>
+                <p>Atuação no suporte técnico e desenvolvimento de projetos relacionados à infraestrutura, regularização urbana e saneamento para a depoluição de bacias hidrográficas em São Paulo.</p>
+                <div class="project-tags">
+                    <span>Engenharia Civil</span>
+                    <span>Drenagem</span>
+                    <span>Infraestrutura</span>
+                </div>
+            </div>
+
+            <!-- Cartão 3 -->
+            <div class="project-card">
+                <h3 class="project-title">Scripts de Otimização Topográfica</h3>
+                <p>Rotinas criadas para automatizar o processamento de coordenadas, off-sets de drenagem e leitura de dados brutos de campo direto para o ambiente CAD, acelerando a entrega de plantas.</p>
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>ZWCAD</span>
+                    <span>Topografia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Jefter Alves. Desenvolvido para exibição de portfólio.</p>
+    </footer>
+
+</body>
+</html>

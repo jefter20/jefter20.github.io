@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: jefter20/jefter20.github.io # Altere para o nome do seu repositório
+  branch: main # Ramo principal
+
+media_folder: "assets/uploads" # Onde as imagens do painel serão salvas
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "automacoes"
+    label: "Automações CAD"
+    folder: "_automacoes"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Título da Rotina", name: "title", widget: "string"}
+      - {label: "Linguagem", name: "linguagem", widget: "select", options: ["AutoLISP", "Python", "VBA"]}
+      - {label: "Data de Criação", name: "date", widget: "datetime"}
+      - {label: "Descrição do Problema Resolvido", name: "description", widget: "text"}
+      - {label: "Corpo (Documentação e Código)", name: "body", widget: "markdown"}
+
+  - name: "projetos"
+    label: "Projetos de Topografia"
+    folder: "_projetos"
+    create: true
+    fields:
+      - {label: "Nome do Projeto", name: "title", widget: "string"}
+      - {label: "Imagem de Destaque", name: "thumbnail", widget: "image", required: false}
+      - {label: "Detalhes Técnicos", name: "body", widget: "markdown"}
